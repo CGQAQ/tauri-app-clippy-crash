@@ -17,6 +17,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: install deps
+      run: sudo apt-get install libwebkit2gtk-4.0-dev -y
     - name: Install Rust
       uses: actions-rs/toolchain@v1
       with:
