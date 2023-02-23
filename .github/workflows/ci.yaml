@@ -11,6 +11,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    defaults:
+    run:
+      working-directory: ./src-tauri
 
     steps:
     - uses: actions/checkout@v2
@@ -20,7 +23,6 @@ jobs:
         toolchain: stable
         override: true
     - name: Clippy
-      working-directory: ./src-tauri
       uses: actions-rs/cargo@v1
       with:
         command: clippy
