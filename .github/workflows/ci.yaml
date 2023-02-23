@@ -19,9 +19,8 @@ jobs:
       with:
         toolchain: stable
         override: true
-    - name: change dir
-      run: cd ./src-tauri
     - name: Clippy
+      working-directory: ./src-tauri
       uses: actions-rs/cargo@v1
       with:
         command: clippy
