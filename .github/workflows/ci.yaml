@@ -22,8 +22,7 @@ jobs:
       with:
         toolchain: stable
         override: true
-    - name: Clippy
-      uses: actions-rs/cargo@v1
-      with:
-        command: clippy
-        args: --all-targets --all-features -- -D warnings
+    - name: run Clippy on ./src-tauri folder
+      run:|
+        cd ./src-tauri
+        cargo clippy --all-targets --all-features -- -D warnings
